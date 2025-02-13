@@ -20,10 +20,9 @@ function getHumanChoice(){
     return userchoice;
 }
 
-
-function playGame(){ 
-    let humanScore = 0; 
-    let computerScore = 0;    
+let humanScore = 0; 
+let computerScore = 0;
+function playGame(){      
     function playRound(userchoice,cpuhoice){
             if (userchoice==="rock" && cpuchoice==="rock"){
                 console.log("Computer chose: rock")
@@ -32,18 +31,18 @@ function playGame(){
             } else if (userchoice==="rock" && cpuchoice==="paper"){
                 console.log("Computer chose: paper")
                 console.log("You chose: rock")
-                console.log("You lose! Paper beats rock.")
-                computerScore=+1
+                console.log("Round lost! Paper beats rock.")
+                computerScore+=1
             } else if (userchoice==="rock" && cpuchoice==="scissors"){
                 console.log("Computer chose: scissors")
                 console.log("You chose: rock")
-                console.log("You win! Rock beats scissors.")
-                humanScore=+1
+                console.log("Round won! Rock beats scissors.")
+                humanScore+=1
             } else if (userchoice==="paper" && cpuchoice==="rock"){
                 console.log("Computer chose: rock")
                 console.log("You chose: paper")
-                console.log("You win! Paper beats rock.")
-                humanScore=+1
+                console.log("Round won! Paper beats rock.")
+                humanScore+=1
             } else if (userchoice==="paper" && cpuchoice==="paper"){
                 console.log("Computer chose: paper")
                 console.log("You chose: paper")
@@ -51,18 +50,18 @@ function playGame(){
             } else if (userchoice==="paper" && cpuchoice==="scissors"){
                 console.log("Computer chose: scissors")
                 console.log("You chose: paper")
-                console.log("You lose! Scissors beats paper.")
-                computerScore=+1
+                console.log("Round lost! Scissors beats paper.")
+                computerScore+=1
             } else if (userchoice==="scissors" && cpuchoice==="rock"){
                 console.log("Computer chose: rock")
                 console.log("you chose: scissors")
-                console.log("You lose! Rock beats scissors.")
-                computerScore=+1
+                console.log("Round lost! Rock beats scissors.")
+                computerScore+=1
             } else if (userchoice==="scissors" && cpuchoice==="paper"){
                 console.log("Computer chose: paper")
                 console.log("You chose: scissors")
-                console.log("You win! Scissors beats paper.")
-                humanScore=+1
+                console.log("Round won! Scissors beats paper.")
+                humanScore+=1
             } else if (userchoice==="scissors" && cpuchoice==="scissors"){
                 console.log("Computer chose: scissors")
                 console.log("You chose: scissors")
@@ -86,4 +85,10 @@ while (round < 5){
     round++;
 }
 
-console.log("The total score is computer: "+computerScore+ " Your score: "+humanScore);
+ if (humanScore > computerScore){
+    console.log("You won!!! The total score is computer: "+computerScore+ " Your score: "+humanScore)
+}else if (humanScore < computerScore){
+    console.log("You lost!!! The total score is computer: "+computerScore+ " Your score: "+humanScore)
+} else {
+    console.log("It's a tie!!! The total score is computer: "+computerScore+ " Your score: "+humanScore)
+};
